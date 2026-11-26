@@ -2,7 +2,7 @@
 
 > Complétez ce fichier au fil de l'atelier, puis faites un commit et un push (voir la section « Rendu » du README).
 
-**Nom / Prénom :**
+**Nom / Prénom :IKONGA / Prince Henri**
 **Groupe :**
 
 ---
@@ -10,9 +10,11 @@
 ## Exercice 1 — Cluster
 
 1. Combien de nœuds affiche `kubectl get nodes` ? Quel est le rôle de chacun ?
-   >
+   >En tapant la commande, on remarque qu'il y a 3 nœuds.
+Le nœud k3d-lab-server-0 est le control plane : il pilote le cluster. Les deux autres (k3d-lab-agent-0 et k3d-lab-agent-1) sont des agents, ce sont les workers qui exécutent les pods.
+   
 2. Que montre `docker ps` ? Qu'est-ce qu'un « nœud » dans k3d, concrètement ?
-   >
+   > La commande docker ps nous montre les conteneurs en cours d'exécution dans Docker : 4 au total (k3d-lab-server-0, k3d-lab-agent-0, k3d-lab-agent-1 et k3d-lab-serverlb). Un nœud dans k3d est un conteneur Docker qui fait tourner k3s : cela permet de simuler plusieurs machines sur une seule. Le serverlb est le load balancer, ce n'est pas un nœud.
 
 ## Exercice 2 — Premier déploiement
 
