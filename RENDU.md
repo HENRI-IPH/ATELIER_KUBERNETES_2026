@@ -2,7 +2,8 @@
 
 > Complétez ce fichier au fil de l'atelier, puis faites un commit et un push (voir la section « Rendu » du README).
 
-**Nom / Prénom :IKONGA / Prince Henri**
+**Nom / Prénom :IKONGA Prince Henri**
+
 **Groupe :**
 
 ---
@@ -19,9 +20,9 @@ Le nœud k3d-lab-server-0 est le control plane : il pilote le cluster. Les deux 
 ## Exercice 2 — Premier déploiement
 
 3. Quels objets Kubernetes ont été créés par `kubectl create deployment` ? (indice : `kubectl get all`)
-   >
+   >kubectl create deployment a créé trois objets : un Deployment (web), un ReplicaSet (web-68d995574f) et un Pod (web-68d995574f-jzdms). Le Deployment crée le ReplicaSet, qui crée le pod. (Le Service web vient de la commande kubectl expose.)
 4. Vous avez supprimé le pod `web-...` : que s'est-il passé, et pourquoi ?
-   >
+   >Le pod supprimé a été remplacé automatiquement par un nouveau pod, avec un nom différent. Le ReplicaSet doit maintenir le nombre de réplicas voulu (1) : en voyant qu'il y en avait 0, il en a recréé un. C'est la boucle de réconciliation, qui compare l'état désiré à l'état réel.
 
 ## Exercice 3 — Modifier un conteneur en direct
 
